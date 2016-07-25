@@ -4,7 +4,7 @@ package com.denny7794.rgbcircles;
  * Created by Denis on 25.07.2016.
  */
 public class MainCircle {
-    public static final int INIT_RADIUS = 50;
+    public static final int INIT_RADIUS = 20;
     private int x;
     private int y;
     private int radius;
