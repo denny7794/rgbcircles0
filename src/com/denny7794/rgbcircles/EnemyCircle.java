@@ -24,7 +24,21 @@ public class EnemyCircle extends SimpleCircle{
         int y = random.nextInt(GameManager.getHeight());
         int radius = FROM_RADIUS + random.nextInt(TO_RADIUS - FROM_RADIUS);
         EnemyCircle enemyCircle = new EnemyCircle(x, y , radius);
-        enemyCircle.setColor(ENEMY_COLOR);
         return enemyCircle;
+    }
+
+    public void setEnemyOfFoodColorDependsOn(MainCircle mainCircle) {
+        if (isSmallerThan(mainCircle)){
+            setColor(Color.rgb(0, 200, 0));
+        } else {
+            setColor(ENEMY_COLOR);
+        }
+    }
+
+    private boolean isSmallerThan(SimpleCircle circle) {
+        if (radius < circle.radius){
+            return true;
+        }
+        return false;
     }
 }
