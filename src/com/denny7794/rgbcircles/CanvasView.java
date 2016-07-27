@@ -79,4 +79,9 @@ public class CanvasView extends View implements ICanvasView{
         invalidate();
         return true;
     }
+
+    // todo ДЗ (пересчитать радиус кругов в зависимости от размера экрана)
+   // public static int recalculateRadius(int radius) {
+     //   return radius * 768 / width < height ? width : height;
+    //}
 }
