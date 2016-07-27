@@ -5,10 +5,8 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Point;
 import android.util.AttributeSet;
-import android.view.Display;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.WindowManager;
+import android.view.*;
+import android.widget.Toast;
 
 /**
  * Created by Denis on 25.07.2016.
@@ -19,6 +17,7 @@ public class CanvasView extends View implements ICanvasView{
     private GameManager gameManager;
     private Paint paint;
     private Canvas canvas;
+    private Toast toast;
 
     public CanvasView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -56,6 +55,21 @@ public class CanvasView extends View implements ICanvasView{
     }
 
     @Override
+    public void redraw() {
+        invalidate();
+    }
+
+    @Override
+    public void showMessage(String text) {
+        if (toast != null) {
+            toast.cancel();
+        }
+        toast = Toast.makeText(getContext(), text, Toast.LENGTH_SHORT);
+        toast.setGravity(Gravity.CENTER, 0, 0);
+        toast.show();
+    }
+
+    @Override
     public boolean onTouchEvent(MotionEvent event) {
         int x = (int) event.getX();
         int y = (int) event.getY();
@@ -65,4 +79,9 @@ public class CanvasView extends View implements ICanvasView{
         invalidate();
         return true;
     }
+
+    // todo ДЗ (пересчитать радиус кругов в зависимости от размера экрана)
+   // public static int recalculateRadius(int radius) {
+     //   return radius * 768 / width < height ? width : height;
+    //}
 }
