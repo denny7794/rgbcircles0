@@ -6,5 +6,7 @@ package com.denny7794.rgbcircles;
 public interface ICanvasView {
     void drawCircle(SimpleCircle circle);
 
+    void redraw();
+
     //void redraw();
 }
