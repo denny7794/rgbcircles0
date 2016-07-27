@@ -11,7 +11,7 @@ public class MainCircle extends SimpleCircle{
     public static final int OUR_COLOR = Color.BLUE;
 
     public MainCircle(int x, int y) {
-        super(x, y, INIT_RADIUS);
+        super(x, y, CanvasView.recalculateRadius(INIT_RADIUS));
         setColor(OUR_COLOR);
     }
 
