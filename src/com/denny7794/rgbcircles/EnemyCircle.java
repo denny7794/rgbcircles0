@@ -29,7 +29,7 @@ public class EnemyCircle extends SimpleCircle{
         int y = random.nextInt(GameManager.getHeight());
         int dx = -RANDOM_SPEED + random.nextInt(RANDOM_SPEED*2);
         int dy = -RANDOM_SPEED + random.nextInt(RANDOM_SPEED*2);
-        int radius = FROM_RADIUS + random.nextInt(TO_RADIUS - FROM_RADIUS);
+        int radius = CanvasView.recalculateRadius(FROM_RADIUS + random.nextInt(TO_RADIUS - FROM_RADIUS));
         EnemyCircle enemyCircle = new EnemyCircle(x, y , radius, dx, dy);
         return enemyCircle;
     }

@@ -23,7 +23,7 @@ public class MainCircle extends SimpleCircle{
     }
 
     public void initRadius() {
-        radius = INIT_RADIUS;
+        radius = CanvasView.recalculateRadius(INIT_RADIUS);
     }
 
     public void growRadius(SimpleCircle circle) {
