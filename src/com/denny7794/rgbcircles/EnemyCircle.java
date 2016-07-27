@@ -9,8 +9,8 @@ import java.util.Random;
  */
 public class EnemyCircle extends SimpleCircle{
 
-    public static final int FROM_RADIUS = 10;
-    public static final int TO_RADIUS = 15;
+    public static final int FROM_RADIUS = 5;
+    public static final int TO_RADIUS = 20;
     public static final int ENEMY_COLOR = Color.RED;
     public static final int RANDOM_SPEED = 5;
     private int dx;
